@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caribbean Business Schema Generator | Webitt Digital</title>
+  <meta name="description" content="Free tool to generate 100% valid Google JSON-LD LocalBusiness structured data for Caribbean businesses in Trinidad & Tobago, Jamaica, Barbados, and beyond.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #111827;
+      --card-border: #1f2937;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --input-bg: #0f172a;
+      --input-border: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 60px;
+    }
+
+    /* Top Agency Banner */
+    .agency-banner {
+      background: linear-gradient(90deg, #1e1b4b 0%, #0f172a 100%);
+      border-bottom: 1px solid #312e81;
+      padding: 12px 24px;
+      font-size: 0.875rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .agency-banner a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .agency-banner a:hover {
+      text-decoration: underline;
+    }
+
+    .cta-btn {
+      background: var(--accent);
+      color: white !important;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.8125rem;
+      transition: background 0.2s;
+    }
+
+    .cta-btn:hover {
+      background: var(--accent-hover);
+      text-decoration: none !important;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 40px auto 0;
+      padding: 0 20px;
+    }
+
+    header {
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 8px;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Grid Layout */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .card h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+    }
+
+    /* Form Fields */
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    input, select {
+      width: 100%;
+      background: var(--input-bg);
+      border: 1px solid var(--input-border);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.9375rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--accent);
+    }
+
+    /* Code Output Box */
+    .code-container {
+      position: relative;
+    }
+
+    pre {
+      background: #090d16;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.84rem;
+      color: #38bdf8;
+      overflow-x: auto;
+      height: 480px;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.8125rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .copy-btn:hover {
+      background: var(--accent-hover);
+    }
+
+    .badge-bar {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      align-items: center;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Agency Banner -->
+  <div class="agency-banner">
+    <div>
+      <span>Engineered by <strong><a href="https://thewebitt.com" target="_blank" rel="noopener">Webitt</a></strong> · Modern Websites, Web Apps & Technical SEO</span>
+    </div>
+    <div>
+      <a href="https://thewebitt.com/contact" target="_blank" rel="noopener" class="cta-btn">Need Custom Development? Contact Us</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <header>
+      <h1>Caribbean Business Schema Generator</h1>
+      <p class="subtitle">Generate clean, Google-compliant JSON-LD structured data tailored for Caribbean business addresses, currencies, and WhatsApp sales funnels.</p>
+    </header>
+
+    <div class="grid">
+      <!-- Input Panel -->
+      <div class="card">
+        <h2>Business Information</h2>
+        
+        <div class="form-group">
+          <label for="bizName">Business Name</label>
+          <input type="text" id="bizName" value="Sample Caribbean Law Practice" placeholder="e.g. Acme Studio">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bizType">Schema Type</label>
+            <select id="bizType">
+              <option value="LocalBusiness">LocalBusiness (General)</option>
+              <option value="ProfessionalService" selected>ProfessionalService</option>
+              <option value="LegalService">LegalService (Law Firm)</option>
+              <option value="MedicalBusiness">MedicalBusiness / Clinic</option>
+              <option value="Store">Store / Retail</option>
+              <option value="Restaurant">Restaurant / Food</option>
+              <option value="RealEstateAgent">RealEstateAgent</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="country">Country</label>
+            <select id="country">
+              <option value="TT" selected>Trinidad & Tobago (TT)</option>
+              <option value="JM">Jamaica (JM)</option>
+              <option value="BB">Barbados (BB)</option>
+              <option value="GY">Guyana (GY)</option>
+              <option value="BS">Bahamas (BS)</option>
+              <option value="LC">Saint Lucia (LC)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="websiteUrl">Website URL</label>
+            <input type="url" id="websiteUrl" value="https://example.com" placeholder="https://yourwebsite.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" value="+1-868-555-0199" placeholder="+1-868-555-0199">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="whatsapp">WhatsApp Business Number</label>
+            <input type="text" id="whatsapp" value="+18685550199" placeholder="+18685550199">
+          </div>
+          <div class="form-group">
+            <label for="currency">Currencies Accepted</label>
+            <input type="text" id="currency" value="TTD, USD" placeholder="e.g. TTD, USD">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="street">Street Address</label>
+          <input type="text" id="street" value="12 Maraval Road" placeholder="e.g. 12 Maraval Road">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city">City / Town / Borough</label>
+            <input type="text" id="city" value="Port of Spain" placeholder="e.g. Port of Spain">
+          </div>
+          <div class="form-group">
+            <label for="region">Region / Parish / Corporation</label>
+            <input type="text" id="region" value="Port of Spain Corporation" placeholder="e.g. St. George">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="lat">Latitude (Optional)</label>
+            <input type="text" id="lat" value="10.6653" placeholder="e.g. 10.6653">
+          </div>
+          <div class="form-group">
+            <label for="lng">Longitude (Optional)</label>
+            <input type="text" id="lng" value="-61.5189" placeholder="e.g. -61.5189">
+          </div>
+        </div>
+      </div>
+
+      <!-- Output Panel -->
+      <div class="card">
+        <h2>Generated JSON-LD Structured Data</h2>
+        <div class="code-container">
+          <button class="copy-btn" id="copyBtn" onclick="copySchema()">Copy Code</button>
+          <pre><code id="outputCode"></code></pre>
+        </div>
+        <div class="badge-bar">
+          <span class="status-dot"></span>
+          <span>Google Rich Results & Knowledge Graph Compliant</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function updateSchema() {
+      const bizName = document.getElementById('bizName').value || "My Business";
+      const bizType = document.getElementById('bizType').value || "LocalBusiness";
+      const country = document.getElementById('country').value || "TT";
+      const websiteUrl = document.getElementById('websiteUrl').value || "https://example.com";
+      const phone = document.getElementById('phone').value || "";
+      const whatsapp = document.getElementById('whatsapp').value || "";
+      const currency = document.getElementById('currency').value || "";
+      const street = document.getElementById('street').value || "";
+      const city = document.getElementById('city').value || "";
+      const region = document.getElementById('region').value || "";
+      const lat = document.getElementById('lat').value;
+      const lng = document.getElementById('lng').value;
+
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": bizType,
+        "name": bizName,
+        "url": websiteUrl
+      };
+
+      if (phone) schema["telephone"] = phone;
+
+      schema["address"] = {
+        "@type": "PostalAddress",
+        "streetAddress": street,
+        "addressLocality": city,
+        "addressCountry": country
+      };
+
+      if (region) schema["address"]["addressRegion"] = region;
+      if (currency) schema["currenciesAccepted"] = currency;
+
+      if (lat && lng) {
+        schema["geo"] = {
+          "@type": "GeoCoordinates",
+          "latitude": parseFloat(lat) || lat,
+          "longitude": parseFloat(lng) || lng
+        };
+      }
+
+      if (whatsapp) {
+        schema["contactPoint"] = {
+          "@type": "ContactPoint",
+          "telephone": whatsapp,
+          "contactType": "customer service",
+          "availableLanguage": ["English"]
+        };
+      }
+
+      const scriptTag = `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n<\/script>`;
+      document.getElementById('outputCode').textContent = scriptTag;
+    }
+
+    function copySchema() {
+      const code = document.getElementById('outputCode').textContent;
+      navigator.clipboard.writeText(code).then(() => {
+        const btn = document.getElementById('copyBtn');
+        btn.textContent = "Copied!";
+        setTimeout(() => btn.textContent = "Copy Code", 2000);
+      });
+    }
+
+    document.querySelectorAll('input, select').forEach(el => {
+      el.addEventListener('input', updateSchema);
+    });
+
+    updateSchema();
+  </script>
+</body>
+</html>
