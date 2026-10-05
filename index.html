@@ -457,6 +457,47 @@
       background: var(--primary-hover);
     }
 
+    /* Video Embed Card */
+    .video-showcase-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      margin-top: 4px;
+    }
+
+    .video-showcase-header {
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background: #fafbfd;
+    }
+
+    .video-showcase-header h3 {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-top: 56.25%;
+      width: 100%;
+      background: #000;
+    }
+
+    .video-wrapper iframe {
+      border: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+
     /* Bottom Info Card */
     .bottom-info-strip {
       background: var(--surface);

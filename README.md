@@ -5,6 +5,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Google Rich Results Ready](https://img.shields.io/badge/Google-Rich%20Results%20Ready-green.svg)](https://search.google.com/test/rich-results)
 
+[![Caribbean Business Schema Generator Preview](poster.jpg)](https://webittdigital.github.io/caribbean-business-schema/)
+
+> **Live Interactive Generator & Video Walkthrough:** [webittdigital.github.io/caribbean-business-schema](https://webittdigital.github.io/caribbean-business-schema/)
+
 A lightweight TypeScript and JSON-LD utility for generating Schema.org structured data tailored specifically for Caribbean businesses, service providers, and modern web applications.
 
 Standard Schema generators are designed primarily for North American and European conventions. They frequently cause validation issues for Caribbean businesses due to missing postal codes, parish or corporation regional boundaries, WhatsApp-driven commercial channels, and multi-currency pricing (TTD, JMD, BBD, USD).
