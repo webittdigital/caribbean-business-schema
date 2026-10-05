@@ -5,9 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Google Rich Results Ready](https://img.shields.io/badge/Google-Rich%20Results%20Ready-green.svg)](https://search.google.com/test/rich-results)
 
-[![Caribbean Business Schema Generator Preview](poster.jpg)](https://webittdigital.github.io/caribbean-business-schema/)
-
-> **Live Interactive Generator & Video Walkthrough:** [webittdigital.github.io/caribbean-business-schema](https://webittdigital.github.io/caribbean-business-schema/)
+![Caribbean Business Schema Generator Walkthrough](demo.gif)
 
 A lightweight TypeScript and JSON-LD utility for generating Schema.org structured data tailored specifically for Caribbean businesses, service providers, and modern web applications.
 
